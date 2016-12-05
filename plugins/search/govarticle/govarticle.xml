@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4.5" type="plugin" group="search" method="upgrade">
+	<name>plg_search_govarticle</name>
+	<author>Artur Stępień</author>
+	<creationDate>October 2015</creationDate>
+	<copyright>Copyright (C) 2015 Fundacja PCJ Otwarte Źródła.</copyright>
+	<license>GNU General Public License v. 2.0</license>
+	<authorEmail>artur.stepien@bestproject.pl</authorEmail>
+	<authorUrl>http://dostepny.joomla.pl</authorUrl>
+	<version>3.0.2</version>
+	<description>PLG_SEARCH_GOVARTICLE_XML_DESCRIPTION</description>
+
+	<files>
+		<folder>language</folder>
+		<filename plugin="govarticle">govarticle.php</filename>
+	</files>
+
+	<languages folder="language">
+		<language tag="pl-PL">pl-PL/pl-PL.plg_search_govarticle.ini</language>
+		<language tag="pl-PL">pl-PL/pl-PL.plg_search_govarticle.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+
+			<fieldset name="basic">
+
+				<field name="search_limit" type="text"
+					default="50"
+					description="PLG_SEARCH_GOVARTICLE_FIELD_SEARCHLIMIT_DESC"
+					label="PLG_SEARCH_GOVARTICLE_FIELD_SEARCHLIMIT_LABEL"
+					size="5"
+				/>
+
+				<field name="search_content" type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					description="PLG_SEARCH_GOVARTICLE_FIELD_CONTENT_DESC"
+					label="PLG_SEARCH_GOVARTICLE_FIELD_CONTENT_LABEL"
+				>
+					<option value="1">JON</option>
+					<option value="0">JOFF</option>
+				</field>
+
+				<field name="search_archived" type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					description="PLG_SEARCH_GOVARTICLE_FIELD_ARCHIVED_DESC"
+					label="PLG_SEARCH_GOVARTICLE_FIELD_ARCHIVED_LABEL"
+				>
+					<option value="1">JON</option>
+					<option value="0">JOFF</option>
+				</field>
+
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>

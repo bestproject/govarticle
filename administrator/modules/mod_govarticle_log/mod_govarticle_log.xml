@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.4.5" client="administrator" method="upgrade">
+	<name>mod_govarticle_log</name>
+	<creationDate>October 2015</creationDate>
+	<version>1.0.2</version>
+	<copyright>Copyright (c) 2015, Fundacja PCJ Otwarte Źródła</copyright>
+	<license>GNU General Public License v. 2.0</license>
+	<author>Artur Stępień</author>
+	<authorEmail>artur.stepien@bestproject.pl</authorEmail>
+	<authorUrl>http://dostepny.joomla.pl</authorUrl>
+	<description>MOD_GOVARTICLE_LOG_XML_DESCRIPTION</description>
+	<files>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+		<filename module="mod_govarticle_log">mod_govarticle_log.php</filename>
+		<filename>helper.php</filename>
+	</files>
+	<languages>
+		<language tag="pl-PL">language/pl-PL/pl-PL.mod_govarticle_log.ini</language>
+		<language tag="pl-PL">language/pl-PL/pl-PL.mod_govarticle_log.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="limit"
+					type="number"
+					default="25"
+					filter="INT"
+					label="MOD_GOVARTICLE_LOG_FIELD_LIMIT_LABEL"
+					description="MOD_GOVARTICLE_LOG_FIELD_LIMIT_DESC" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

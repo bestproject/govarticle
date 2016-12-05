@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4.5" type="plugin" group="editors-xtd" method="upgrade">
+	<name>plg_editors-xtd_govarticle</name>
+	<author>Artur Stępień</author>
+	<creationDate>October 2015</creationDate>
+	<copyright>Copyright (C) 2015 Fundacja PCJ Otwarte Źródła.</copyright>
+	<license>GNU General Public License v. 2.0</license>
+	<authorEmail>artur.stepien@bestproject.pl</authorEmail>
+	<authorUrl>http://dostepny.joomla.pl</authorUrl>
+	<version>1.0.2</version>
+	<description>PLG_GOVARTICLE_XML_DESCRIPTION</description>
+
+	<files>
+		<filename plugin="govarticle">govarticle.php</filename>
+	</files>
+
+	<languages>
+		<language tag="pl-PL">language/pl-PL/pl-PL.plg_editors-xtd_govarticle.ini</language>
+		<language tag="pl-PL">language/pl-PL/pl-PL.plg_editors-xtd_govarticle.sys.ini</language>
+	</languages>
+
+</extension>
