@@ -22,3 +22,7 @@
 !/plugins/editors-xtd/govarticle/*
 !/plugins/search/govarticle/
 !/plugins/search/govarticle/*
+
+# Ignore license and readme
+!/LICENSE
+!/README.md
