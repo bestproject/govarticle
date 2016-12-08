@@ -1,2 +1,2 @@
 # GovArticle
-GovArticle package extensions for Joomla.
+All the extensions from GovArticle package for Joomla!.
