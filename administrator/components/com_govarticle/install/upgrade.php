@@ -34,7 +34,7 @@ class com_govarticleInstallerScript {
 	 */
 	function install($parent) {
 		//die('install');
-		JFactory::getApplication()->enqueueMessage('Running install');
+//		JFactory::getApplication()->enqueueMessage('Running install');
 	}
 
 	/**
@@ -42,7 +42,7 @@ class com_govarticleInstallerScript {
 	 */
 	function uninstall($parent) {
 		//die('uninstall');
-		JFactory::getApplication()->enqueueMessage('Running uninstall');
+//		JFactory::getApplication()->enqueueMessage('Running uninstall');
 	}
 
 	/**
@@ -50,7 +50,7 @@ class com_govarticleInstallerScript {
 	 */
 	function update($parent) {
 		//die('update');
-		JFactory::getApplication()->enqueueMessage('Running update');
+//		JFactory::getApplication()->enqueueMessage('Running update');
 	}
 
 	/**
@@ -60,7 +60,7 @@ class com_govarticleInstallerScript {
 	 * @param   Object   $parent Manifest file instance
 	 */
 	function preflight($type, $parent) {
-		JFactory::getApplication()->enqueueMessage('Running preflight');
+//		JFactory::getApplication()->enqueueMessage('Running preflight');
 		//die('pre');
 		// If this is update get previous number version
 		if ($type == 'update') {
@@ -80,7 +80,7 @@ class com_govarticleInstallerScript {
 	 */
 	function postflight($type, $parent) {
 		//die('post');
-		JFactory::getApplication()->enqueueMessage('Running postflight');
+//		JFactory::getApplication()->enqueueMessage('Running postflight');
 		// Only after update
 		if( $type!=='update' ) return;
 

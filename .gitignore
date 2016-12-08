@@ -37,6 +37,9 @@
 !/plugins/search/
 /plugins/search/*
 !/plugins/search/govarticle/**
+!/plugins/finder/
+/plugins/finder/*
+!/plugins/finder/govarticle/**
 
 !/LICENSE
 !/README.md
