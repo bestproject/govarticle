@@ -40,6 +40,9 @@
 !/plugins/finder/
 /plugins/finder/*
 !/plugins/finder/govarticle/**
+!/plugins/content/
+/plugins/content/*
+!/plugins/content/govarticlenavigation/**
 
 !/LICENSE
 !/README.md
