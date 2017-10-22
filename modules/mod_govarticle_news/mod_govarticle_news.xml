@@ -11,9 +11,10 @@
 	<description>MOD_GOVARTICLE_NEWS_XML_DESCRIPTION</description>
     
 	<files>
-		<filename module="mod_govarticle_news">mod_govarticle_news.php</filename>
+        <folder>language</folder>
 		<folder>tmpl</folder>
 		<filename>helper.php</filename>
+		<filename module="mod_govarticle_news">mod_govarticle_news.php</filename>
 	</files>
     
 	<languages>
