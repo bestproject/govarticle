@@ -134,6 +134,21 @@
         <zip destfile="./build/mod_govarticle_news.zip" basedir="./build/mod_govarticle_news"/>
     </target>
     
+    <target name="build:mod_govarticle_popular">
+        <echo msg="Creating mod_govarticle_popular directory" />
+        <mkdir dir="./build/mod_govarticle_popular" />
+        
+        <echo msg="Building mod_govarticle_popular installer" />
+        <copy todir="./build/mod_govarticle_popular" >
+            <fileset dir="./modules/mod_govarticle_popular">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+        
+        <echo msg="Creating mod_govarticle_popular zipfile." />
+        <zip destfile="./build/mod_govarticle_popular.zip" basedir="./build/mod_govarticle_popular"/>
+    </target>
+    
     <target name="build">
         <echo msg="Creating build directory ./build" />
         <mkdir dir="./build" />
@@ -145,6 +160,7 @@
         <phingcall target="build:mod_govarticle_stats"></phingcall>
         <phingcall target="build:mod_govarticle_latest"></phingcall>
         <phingcall target="build:mod_govarticle_news"></phingcall>
+        <phingcall target="build:mod_govarticle_popular"></phingcall>
     </target>
 
     <target name="clean">
