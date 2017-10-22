@@ -46,3 +46,8 @@
 
 !/LICENSE
 !/README.md
+
+/build/**
+!/composer.json
+!/.gitignore
+!/build.xml

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GovArticle" default="docs" basedir="." description="GovArticle build tasl/">
+
+    <target name="prepare">
+        <mkdir dir="docs"/>
+    </target>
+
+    <target name="docs">
+        <echo msg="Creating documentation directory ./docs" />
+        <mkdir dir="docs" />
+        <echo msg="Building documentation" />
+        <phpdoc2 title="Phing Example" destdir="docs"  template="clean">
+            <fileset dir=".">
+                <include name="**/*.php"/>
+            </fileset>
+        </phpdoc2>
+    </target>
+
+    <target name="clean">
+        <!--delete dir="docs"/-->
+        <echo msg="Removing documentation directory ./docs if exists" />
+        <delete dir="./docs" includeemptydirs="true"/>
+    </target>
+
+</project>
