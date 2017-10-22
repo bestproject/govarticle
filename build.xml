@@ -1,25 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="GovArticle" default="docs" basedir="." description="GovArticle build tasl/">
+<project name="GovArticle" default="build" basedir="." description="GovArticle build task">
 
-    <target name="prepare">
-        <mkdir dir="docs"/>
-    </target>
-
-    <target name="docs">
-        <echo msg="Creating documentation directory ./docs" />
-        <mkdir dir="docs" />
-        <echo msg="Building documentation" />
-        <phpdoc2 title="Phing Example" destdir="docs"  template="clean">
-            <fileset dir=".">
-                <include name="**/*.php"/>
+    <target name="build:com_govarticle">
+        <echo msg="Creating component directory" />
+        <mkdir dir="./build/com_govarticle" />
+        <mkdir dir="./build/com_govarticle/admin" />
+        <mkdir dir="./build/com_govarticle/site" />
+        <mkdir dir="./build/com_govarticle/install" />
+        
+        <echo msg="Building component installer" />
+        <copy todir="./build/com_govarticle/admin" >
+            <fileset dir="./administrator/components/com_govarticle">
+                <include name="**/*" />
+                <exclude name="install/upgrade.php" />
+                
             </fileset>
-        </phpdoc2>
+        </copy>
+        <copy todir="./build/com_govarticle/site" >
+            <fileset dir="./components/com_govarticle">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+        <copy file="./administrator/components/com_govarticle/install/upgrade.php" tofile="./build/com_govarticle/install/upgrade.php" overwrite="true"/>
+        <move file="./build/com_govarticle/admin/govarticle.xml" tofile="./build/com_govarticle/govarticle.xml" overwrite="true"/>
+        
+        <echo msg="Creating component zipfile." />
+        <zip destfile="./build/package/com_govarticle.zip" basedir="./build/com_govarticle"/>
+    </target>
+    
+    <target name="build">
+        <echo msg="Creating build directory ./build" />
+        <mkdir dir="./build" />
+        <mkdir dir="./build/package" />
+        <phingcall target="build:com_govarticle"></phingcall>
     </target>
 
     <target name="clean">
         <!--delete dir="docs"/-->
-        <echo msg="Removing documentation directory ./docs if exists" />
-        <delete dir="./docs" includeemptydirs="true"/>
+        <echo msg="Removing build directory ./build if exists" />
+        <delete dir="./build" includeemptydirs="true"/>
     </target>
 
 </project>
