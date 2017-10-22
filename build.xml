@@ -25,14 +25,126 @@
         <move file="./build/com_govarticle/admin/govarticle.xml" tofile="./build/com_govarticle/govarticle.xml" overwrite="true"/>
         
         <echo msg="Creating component zipfile." />
-        <zip destfile="./build/package/com_govarticle.zip" basedir="./build/com_govarticle"/>
+        <zip destfile="./build/com_govarticle.zip" basedir="./build/com_govarticle"/>
+    </target>
+    
+    <target name="build:com_govarticle:layouts">
+        <echo msg="Creating layouts directory" />
+        <mkdir dir="./build/com_govarticle_layouts/govarticle" />
+        
+        <echo msg="Building layouts installer" />
+        <copy todir="./build/com_govarticle_layouts/govarticle" >
+            <fileset dir="./layouts/govarticle">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+        <copy file="./administrator/manifests/files/govarticle.xml" tofile="./build/com_govarticle_layouts/govarticle.xml" overwrite="true"/>
+        
+        <echo msg="Creating layouts zipfile." />
+        <zip destfile="./build/com_govarticle_layouts.zip" basedir="./build/com_govarticle_layouts"/>
+    </target>
+    
+    <target name="build:mod_govarticle_log">
+        <echo msg="Creating mod_govarticle_log directory" />
+        <mkdir dir="./build/mod_govarticle_log" />
+        
+        <echo msg="Building mod_govarticle_log installer" />
+        <copy todir="./build/mod_govarticle_log" >
+            <fileset dir="./administrator/modules/mod_govarticle_log">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+        
+        <echo msg="Creating mod_govarticle_log zipfile." />
+        <zip destfile="./build/mod_govarticle_log.zip" basedir="./build/mod_govarticle_log"/>
+    </target>
+    
+    <target name="build:mod_govarticle_categories">
+        <echo msg="Creating mod_govarticle_categories directory" />
+        <mkdir dir="./build/mod_govarticle_categories" />
+        
+        <echo msg="Building mod_govarticle_categories installer" />
+        <copy todir="./build/mod_govarticle_categories" >
+            <fileset dir="./modules/mod_govarticle_categories">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+        
+        <echo msg="Creating mod_govarticle_categories zipfile." />
+        <zip destfile="./build/mod_govarticle_categories.zip" basedir="./build/mod_govarticle_categories"/>
+    </target>
+    
+    <target name="build:mod_govarticle_category">
+        <echo msg="Creating mod_govarticle_category directory" />
+        <mkdir dir="./build/mod_govarticle_category" />
+        
+        <echo msg="Building mod_govarticle_category installer" />
+        <copy todir="./build/mod_govarticle_category" >
+            <fileset dir="./modules/mod_govarticle_category">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+        
+        <echo msg="Creating mod_govarticle_category zipfile." />
+        <zip destfile="./build/mod_govarticle_category.zip" basedir="./build/mod_govarticle_category"/>
+    </target>
+    
+    <target name="build:mod_govarticle_stats">
+        <echo msg="Creating mod_govarticle_stats directory" />
+        <mkdir dir="./build/mod_govarticle_stats" />
+        
+        <echo msg="Building mod_govarticle_stats installer" />
+        <copy todir="./build/mod_govarticle_stats" >
+            <fileset dir="./modules/mod_govarticle_stats">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+        
+        <echo msg="Creating mod_govarticle_stats zipfile." />
+        <zip destfile="./build/mod_govarticle_stats.zip" basedir="./build/mod_govarticle_stats"/>
+    </target>
+    
+    <target name="build:mod_govarticle_latest">
+        <echo msg="Creating mod_govarticle_latest directory" />
+        <mkdir dir="./build/mod_govarticle_latest" />
+        
+        <echo msg="Building mod_govarticle_latest installer" />
+        <copy todir="./build/mod_govarticle_latest" >
+            <fileset dir="./modules/mod_govarticle_latest">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+        
+        <echo msg="Creating mod_govarticle_latest zipfile." />
+        <zip destfile="./build/mod_govarticle_latest.zip" basedir="./build/mod_govarticle_latest"/>
+    </target>
+    
+    <target name="build:mod_govarticle_news">
+        <echo msg="Creating mod_govarticle_news directory" />
+        <mkdir dir="./build/mod_govarticle_news" />
+        
+        <echo msg="Building mod_govarticle_news installer" />
+        <copy todir="./build/mod_govarticle_news" >
+            <fileset dir="./modules/mod_govarticle_news">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+        
+        <echo msg="Creating mod_govarticle_news zipfile." />
+        <zip destfile="./build/mod_govarticle_news.zip" basedir="./build/mod_govarticle_news"/>
     </target>
     
     <target name="build">
         <echo msg="Creating build directory ./build" />
         <mkdir dir="./build" />
-        <mkdir dir="./build/package" />
         <phingcall target="build:com_govarticle"></phingcall>
+        <phingcall target="build:com_govarticle:layouts"></phingcall>
+        <phingcall target="build:mod_govarticle_log"></phingcall>
+        <phingcall target="build:mod_govarticle_categories"></phingcall>
+        <phingcall target="build:mod_govarticle_category"></phingcall>
+        <phingcall target="build:mod_govarticle_stats"></phingcall>
+        <phingcall target="build:mod_govarticle_latest"></phingcall>
+        <phingcall target="build:mod_govarticle_news"></phingcall>
     </target>
 
     <target name="clean">

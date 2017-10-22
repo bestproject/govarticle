@@ -21,13 +21,16 @@
 
 !/layouts/
 /layouts/*
-!/layouts/govarticle/*
+!/layouts/govarticle/**
 
 !/modules/
 /modules/*
 !/modules/mod_govarticle_categories/**
 !/modules/mod_govarticle_category/**
 !/modules/mod_govarticle_stats/**
+!/modules/mod_govarticle_latest/**
+!/modules/mod_govarticle_popular/**
+!/modules/mod_govarticle_news/**
 
 !/plugins/
 /plugins/*
