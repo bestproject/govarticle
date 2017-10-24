@@ -149,6 +149,66 @@
         <zip destfile="./build/mod_govarticle_popular.zip" basedir="./build/mod_govarticle_popular"/>
     </target>
     
+    <target name="build:plg_content_govarticlenavigation">
+        <echo msg="Creating plg_content_govarticlenavigation directory" />
+        <mkdir dir="./build/plg_content_govarticlenavigation" />
+        
+        <echo msg="Building plg_content_govarticlenavigation installer" />
+        <copy todir="./build/plg_content_govarticlenavigation" >
+            <fileset dir="./plugins/content/govarticlenavigation">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+        
+        <echo msg="Creating plg_content_govarticlenavigation zipfile." />
+        <zip destfile="./build/plg_content_govarticlenavigation.zip" basedir="./build/plg_content_govarticlenavigation"/>
+    </target>
+    
+    <target name="build:plg_editors-xtd_govarticle">
+        <echo msg="Creating plg_editors-xtd_govarticle directory" />
+        <mkdir dir="./build/plg_editors-xtd_govarticle" />
+        
+        <echo msg="Building plg_editors-xtd_govarticle installer" />
+        <copy todir="./build/plg_editors-xtd_govarticle" >
+            <fileset dir="./plugins/editors-xtd/govarticle">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+        
+        <echo msg="Creating plg_editors-xtd_govarticle zipfile." />
+        <zip destfile="./build/plg_editors-xtd_govarticle.zip" basedir="./build/plg_editors-xtd_govarticle"/>
+    </target>
+    
+    <target name="build:plg_finder_govarticle">
+        <echo msg="Creating plg_finder_govarticle directory" />
+        <mkdir dir="./build/plg_finder_govarticle" />
+        
+        <echo msg="Building plg_finder_govarticle installer" />
+        <copy todir="./build/plg_finder_govarticle" >
+            <fileset dir="./plugins/finder/govarticle">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+        
+        <echo msg="Creating plg_finder_govarticle zipfile." />
+        <zip destfile="./build/plg_finder_govarticle.zip" basedir="./build/plg_finder_govarticle"/>
+    </target>
+    
+    <target name="build:plg_search_govarticle">
+        <echo msg="Creating plg_search_govarticle directory" />
+        <mkdir dir="./build/plg_search_govarticle" />
+        
+        <echo msg="Building plg_search_govarticle installer" />
+        <copy todir="./build/plg_search_govarticle" >
+            <fileset dir="./plugins/search/govarticle">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+        
+        <echo msg="Creating plg_search_govarticle zipfile." />
+        <zip destfile="./build/plg_search_govarticle.zip" basedir="./build/plg_search_govarticle"/>
+    </target>
+    
     <target name="build">
         <echo msg="Creating build directory ./build" />
         <mkdir dir="./build" />
@@ -161,6 +221,10 @@
         <phingcall target="build:mod_govarticle_latest"></phingcall>
         <phingcall target="build:mod_govarticle_news"></phingcall>
         <phingcall target="build:mod_govarticle_popular"></phingcall>
+        <phingcall target="build:plg_content_govarticlenavigation"></phingcall>
+        <phingcall target="build:plg_editors-xtd_govarticle"></phingcall>
+        <phingcall target="build:plg_finder_govarticle"></phingcall>
+        <phingcall target="build:plg_search_govarticle"></phingcall>
     </target>
 
     <target name="clean">
