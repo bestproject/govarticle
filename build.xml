@@ -237,7 +237,7 @@
                 <include name="*.zip" />
             </fileset>
         </copy>
-        <copy file="./administrator/manifests/files/pkg_govarticle.xml" tofile="./build/pkg_govarticle/pkg_govarticle.xml" overwrite="true"/>
+        <copy file="./administrator/manifests/packages/pkg_govarticle.xml" tofile="./build/pkg_govarticle/pkg_govarticle.xml" overwrite="true"/>
         <zip destfile="./build/pkg_govarticle.zip" basedir="./build/pkg_govarticle"/>
     </target>
 
