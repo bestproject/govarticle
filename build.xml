@@ -212,6 +212,8 @@
     <target name="build">
         <echo msg="Creating build directory ./build" />
         <mkdir dir="./build" />
+        
+        <echo msg="Building each of the extensions" />
         <phingcall target="build:com_govarticle"></phingcall>
         <phingcall target="build:com_govarticle:layouts"></phingcall>
         <phingcall target="build:mod_govarticle_log"></phingcall>
@@ -225,10 +227,21 @@
         <phingcall target="build:plg_editors-xtd_govarticle"></phingcall>
         <phingcall target="build:plg_finder_govarticle"></phingcall>
         <phingcall target="build:plg_search_govarticle"></phingcall>
+        
+        <echo msg="Creating package directory ./build/pkg_govarticle" />
+        <mkdir dir="./build/pkg_govarticle/extensions" />
+        
+        <echo msg="Building package installer" />
+        <copy todir="./build/pkg_govarticle/extensions" >
+            <fileset dir="./build/">
+                <include name="*.zip" />
+            </fileset>
+        </copy>
+        <copy file="./administrator/manifests/files/pkg_govarticle.xml" tofile="./build/pkg_govarticle/pkg_govarticle.xml" overwrite="true"/>
+        <zip destfile="./build/pkg_govarticle.zip" basedir="./build/pkg_govarticle"/>
     </target>
 
     <target name="clean">
-        <!--delete dir="docs"/-->
         <echo msg="Removing build directory ./build if exists" />
         <delete dir="./build" includeemptydirs="true"/>
     </target>
