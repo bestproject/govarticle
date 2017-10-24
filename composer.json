@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "build": "phing build.xml"
+        "build": "phing"
     },
     "require-dev": {
         "phing/phing": "2.*"
